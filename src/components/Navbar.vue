@@ -6,9 +6,13 @@
       <li><router-link :to="{ name: 'Ventas' }">Ventas</router-link></li>
       <li><router-link :to="{ name: 'Total' }">Total</router-link></li>
     </ul>
-
-    <p class="logo">32bits</p>
-    <img alt="Vue logo" src="../assets/img/logo.svg" class="logo-img" />
+    <p class="logo__separation">|</p>
+    <router-link :to="{ name: 'Inicio' }" class="router__icon">
+      <div class="icon">
+        <img alt="Vue logo" src="../assets/img/logo.svg" class="logo-img" />
+        <p class="logo">32bits</p>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -24,17 +28,29 @@ export default {};
   align-items: center;
   justify-content: center;
 }
-.logo {
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.router__icon {
+  margin: 1em;
+}
+div > .logo {
   color: white;
   align-items: center;
   font-weight: bolder;
-  font-size: 1.25em;
-  margin: 0 1em;
+  font-size: 1em;
+  /* margin: 0 1em; */
 }
-.logo-img {
-  margin-left: 0.5em;
+.logo__separation {
+  color: rgb(60, 60, 60);
+  font-weight: lighter;
+  font-size: 2em;
+  margin: 0.25em 0.5em;
+}
+div > .logo-img {
   height: 50px;
-  padding: 0.5em;
 }
 .navbar ul {
   display: flex;

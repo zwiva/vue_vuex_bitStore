@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Bienvenid@ a 32 bits</h1>
-    <h2>Juegos de PC y consolas</h2>
+    <h2 style="text-align:center;">Juegos de PC y consolas</h2>
   </div>
 </template>
 <script>

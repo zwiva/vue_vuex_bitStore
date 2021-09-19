@@ -3,7 +3,7 @@
     <Navbar />
 
     <main>
-      <transition name="vista">
+      <transition name="vista" mode="out-in">
         <router-view></router-view>
       </transition>
     </main>
@@ -43,7 +43,7 @@ main {
 }
 .vista-enter-active,
 .vista-leave-active {
-  transition: opacity 0.1s;
+  transition: opacity 0.25s;
 }
 .vista-enter,
 .vista-leave-to {
