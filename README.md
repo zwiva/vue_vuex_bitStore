@@ -1,0 +1,1 @@
+# vuexStoreA_2ndpart
