@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Búsquedas</h1>
-
+    <h1>Buscar</h1>
+    <!-- <hr /> -->
     <section class="search__section">
       <h2>Filtro</h2>
       <input
@@ -10,18 +10,24 @@
         :value="$store.state.busqueda"
         @input="$store.dispatch('setBusqueda', $event.target.value)"
       />
-      <List v-if="$store.state.busqueda"
+      <List
+        v-if="
+          $store.state.busqueda && typeof $store.state.busqueda === 'string'
+        "
         :listaJuegos="$store.getters.encuentraJuegoBuscado"
       />
-      <span class="filtermsge" v-else>👈 Por favor ingresa una búsqueda 🔍 </span>
-    </section>
 
+      <span class="filtermsge" v-else
+        >👈 Por favor ingresar nombre de producto 🔍
+      </span>
+    </section>
+    <hr />
     <section class="search__section">
       <h2>Cantidad de juegos y stock total</h2>
       <p>Cantidad de juegos totales: {{ $store.state.juegos.length }}</p>
       <p>Stock total: {{ $store.getters.allStock }}</p>
     </section>
-
+    <hr />
     <section class="search__section">
       <h2>Listado de juegos</h2>
       <List :listaJuegos="$store.state.juegos" />

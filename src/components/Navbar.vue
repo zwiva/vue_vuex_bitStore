@@ -2,7 +2,7 @@
   <div class="navbar">
     <ul>
       <li><router-link :to="{ name: 'Inicio' }">Inicio</router-link></li>
-      <li><router-link :to="{ name: 'Busquedas' }">Busquedas</router-link></li>
+      <li><router-link :to="{ name: 'Busquedas' }">Buscar</router-link></li>
       <li><router-link :to="{ name: 'Ventas' }">Ventas</router-link></li>
       <li><router-link :to="{ name: 'Total' }">Total</router-link></li>
     </ul>
