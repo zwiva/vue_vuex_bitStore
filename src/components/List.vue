@@ -6,12 +6,14 @@
         :key="juego.codigo"
         :style="{ 'background-color': juego.color }"
       >
-        {{ juego.codigo }} | {{ juego.nombre }}
-        <span v-if="total_mode === 'ver'">|</span> {{ juego.stock }} | $
-        {{ juego.precio }}
-        <button v-if="btn_mode === 'vender'" @click="$emit('vender', juego)">
-          Vender
-        </button>
+        {{ juego.codigo }} |
+        {{ juego.nombre }} 
+        <span v-if="total_mode === 'no'"> | </span> 
+        {{ juego.stock }} | 
+        $ {{ juego.precio }} 
+
+        <!-- <span v-if="total_mode === 'si'"> {{ $store.getters.showVentaAgrupadaPorJuego }} </span> -->
+        <button v-if="btn_mode === 'vender'" @click="$emit('vender', juego)">Vender</button>
         <!-- al hacer click emite accion vender y le pasa juego -->
       </li>
     </ul>
@@ -24,7 +26,7 @@ export default {
   props: {
     listaJuegos: { type: Array, require: true },
     btn_mode: { type: String, default: "mirar" },
-    total_mode: { type: String, default: "ver" },
+    total_mode: { type: String, default: "no" },
   },
 };
 </script>

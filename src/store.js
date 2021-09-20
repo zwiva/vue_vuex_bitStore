@@ -100,6 +100,11 @@ const store = new Vuex.Store({
         return acumulador;
       }, 0);
     },
+    showVentaAgrupadaPorJuego(state) {
+      // armar un arreglo con unicos y que tengan la suma de la cantidad vendida 
+      console.log('arreglo ventas', state.ventas);
+
+    },
   },
   mutations: {
     // metodos que alteran la data

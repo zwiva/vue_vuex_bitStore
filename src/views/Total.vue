@@ -7,7 +7,7 @@
 
       <List
         :listaJuegos="$store.state.ventas"
-        total_mode="no ver"
+        total_mode="si"
         v-if="$store.state.ventas.length > 0"
       />
       <p v-else>El carrito esta vacío</p>

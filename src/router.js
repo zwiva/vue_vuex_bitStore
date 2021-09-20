@@ -5,6 +5,7 @@ const Inicio = () => import("./views/Inicio");
 const Busquedas = () => import("./views/Busquedas");
 const Ventas = () => import("./views/Ventas");
 const Total = () => import("./views/Total");
+const NotFound = () => import("./views/NotFound")
 
 Vue.use(Router);
 
@@ -42,7 +43,7 @@ export default new Router({
     },
     {
       path: "*",
-      redirect: "Inicio",
+      component: NotFound,
     },
   ],
 });
