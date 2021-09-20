@@ -6,8 +6,9 @@
         :key="juego.codigo"
         :style="{ 'background-color': juego.color }"
       >
-        {{ juego.codigo }} | {{ juego.nombre }} | {{ juego.stock }} |
-        {{ juego.precio }} |
+        {{ juego.codigo }} | {{ juego.nombre }}
+        <span v-if="total_mode === 'ver'">|</span> {{ juego.stock }} | $
+        {{ juego.precio }}
         <button v-if="btn_mode === 'vender'" @click="$emit('vender', juego)">
           Vender
         </button>
@@ -23,6 +24,7 @@ export default {
   props: {
     listaJuegos: { type: Array, require: true },
     btn_mode: { type: String, default: "mirar" },
+    total_mode: { type: String, default: "ver" },
   },
 };
 </script>

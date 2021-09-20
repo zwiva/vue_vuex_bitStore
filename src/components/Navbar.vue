@@ -3,8 +3,8 @@
     <ul>
       <li><router-link :to="{ name: 'Inicio' }">Inicio</router-link></li>
       <li><router-link :to="{ name: 'Busquedas' }">Buscar</router-link></li>
-      <li><router-link :to="{ name: 'Ventas' }">Ventas</router-link></li>
-      <li><router-link :to="{ name: 'Total' }">Total</router-link></li>
+      <li><router-link :to="{ name: 'Ventas' }">Vender</router-link></li>
+      <li><router-link :to="{ name: 'Total' }">Total Ventas</router-link></li>
     </ul>
     <p class="logo__separation">|</p>
     <router-link :to="{ name: 'Inicio' }" class="router__icon">

@@ -65,15 +65,17 @@ const store = new Vuex.Store({
     ventas: [],
   },
   getters: {
-    // metodos
+    // metodos que no alteran la data, se procesan para hacer consultas (get)
     // calculos se hacen aca en la store para que puedan ser usandos en mas de un lugar
-    allStock(state) {
+
+    allStoreStock(state) {
       return state.juegos.reduce((acumulador, juego) => {
         acumulador = acumulador + juego.stock;
         console.log(acumulador);
         return acumulador;
       }, 0);
     },
+    //busqueda
     encuentraJuegoBuscado(state) {
       if (state.busqueda === "") {
         return [];
@@ -91,8 +93,16 @@ const store = new Vuex.Store({
     juegosSinStock(state) {
       return state.juegos.filter((juego) => juego.stock === 0);
     },
+    // VENTA
+    showTotalVentas(state) {
+      return state.ventas.reduce((acumulador, venta) => {
+        acumulador += venta.precio;
+        return acumulador;
+      }, 0);
+    },
   },
   mutations: {
+    // metodos que alteran la data
     // contexto: accedo al state y al root statem van con UPPER_SNAKECASE
     SET_BUSQUEDA(state, nuevaBusqueda) {
       // guardo la busqueda escrita por el usuario
@@ -110,7 +120,7 @@ const store = new Vuex.Store({
     },
     // generando venta
     AGREGARPRODUCTO_VENTA(state, venta) {
-      state.ventas.push[venta];
+      state.ventas.push(venta);
     },
   },
   actions: {
@@ -150,12 +160,13 @@ const store = new Vuex.Store({
     //
     async registrarVenta(context, juego) {
       await delay(1000);
-      context.commit("AGREGARPRODUCTO_VENTA", {
+      const detalleProducto = {
         codigo: juego.codigo,
         nombre: juego.nombre,
         precio: juego.precio,
         destacado: juego.destacado,
-      });
+      };
+      context.commit("AGREGARPRODUCTO_VENTA", detalleProducto);
       console.log("registra venta");
     },
   },

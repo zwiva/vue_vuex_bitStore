@@ -25,7 +25,7 @@
     <section class="search__section">
       <h2>Cantidad de juegos y stock total</h2>
       <p>Cantidad de juegos totales: {{ $store.state.juegos.length }}</p>
-      <p>Stock total: {{ $store.getters.allStock }}</p>
+      <p>Stock total: {{ $store.getters.allStoreStock }}</p>
     </section>
     <hr />
     <section class="search__section">
